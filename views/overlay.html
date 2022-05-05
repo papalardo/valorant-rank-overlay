@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overlay</title>
+
+    <meta http-equiv="refresh" content="10">
+
+<!--    Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<!--    End fonts-->
+
+    <link rel="stylesheet" href="/static/css/app.css">
+
+    <style>
+        body {
+            zoom: 300%;
+        }
+    </style>
+</head>
+<body>
+
+<% if (showName) { %>
+
+    <div class="inline-flex rounded px-3 py-2 items-center space-x-2"
+        style="background: #<%= bg %>; color: <%= textColor %>"
+    >
+        <img src="/static/images/radiant-icon.png" alt="" class="w-10 h-10 bg-slate-400 p-1 rounded">
+        <div>
+            <h1 class="leading-[1rem] text-sm"><%= player.gameName %>#<%= player.tagLine %></h1>
+            <h4 class="leading-[1rem] text-sm mt-1">Rank #<%= player.leaderboardRank %> com <%= player.rankedRating %>RR</h4>
+        </div>
+    </div>
+
+<% } %>
+
+<% if (!showName) { %>
+
+    <div class="inline-flex rounded px-2 py-1 items-center space-x-2"
+         style="background: #<%= bg %>; color: <%= textColor %>"
+    >
+        <h4 class="leading-[1rem] text-sm">Rank #<%= player.leaderboardRank %> com <%= player.rankedRating %>RR</h4>
+    </div>
+
+<% } %>
+
+</body>
